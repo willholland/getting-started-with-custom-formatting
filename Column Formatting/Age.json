@@ -1,0 +1,10 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/sp/v2/column-formatting.schema.json",
+    "elmType": "span",
+    "txtContent": "@currentField",
+    "style": {
+        "font-family": "Luminari, Papyrus, Brush Script MT",
+        "font-size": "28px",
+        "text-align": "center"
+    }
+}

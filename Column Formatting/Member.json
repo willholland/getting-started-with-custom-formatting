@@ -1,0 +1,23 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/sp/v2/column-formatting.schema.json",
+    "elmType": "div",
+    "style": {
+        "display": "flex",
+        "flex-direction": "column"
+    },
+    "children": [{
+            "elmType": "img",
+            "attributes": {
+                "src": "@currentField.picture"
+            }
+        },
+        {
+            "elmType": "div",
+            "txtContent": "@currentField.title",
+            "style": {
+                "margin": "auto",
+                "font-family": "Luminari, Papyrus, Brush Script MT"
+            }
+        }
+    ]
+}

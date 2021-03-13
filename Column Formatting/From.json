@@ -1,0 +1,30 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/sp/v2/column-formatting.schema.json",
+    "elmType": "div",
+    "style": {
+        "display": "flex",
+        "flex-direction": "column",
+        "text-align": "center",
+        "font-family": "Luminari, Papyrus, Brush Script MT",
+        "font-size": "18px"
+    },
+    "children": [{
+            "elmType": "img",
+            "attributes": {
+                "src": "=@currentWeb + '/SiteAssets/MiddleEarthLocales/' + @currentField.lookupValue + '.jpg'"
+            },
+            "style": {
+                "height": "48px",
+                "width": "48px",
+                "border-width": "3px",
+                "border-style": "solid",
+                "border-color": "=if(@currentField.lookupValue == 'The Shire', 'brown', if(@currentField.lookupValue == 'Rivendell', 'purple', if(@currentField.lookupValue == 'Osgiliath', 'grey', if(@currentField.lookupValue == 'Mirkwood Forest', 'green', if(@currentField.lookupValue == 'Blue Mountains', 'blue', 'gold')))))",
+                "border-radius": "100px"
+            }
+        },
+        {
+            "elmType": "div",
+            "txtContent": "@currentField.lookupValue"
+        }
+    ]
+}

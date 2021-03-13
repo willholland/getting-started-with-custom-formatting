@@ -1,0 +1,147 @@
+<?xml version="1.0"?>
+<pnp:Provisioning xmlns:pnp="http://schemas.dev.office.com/PnP/2020/02/ProvisioningSchema">
+  <pnp:Preferences Generator="OfficeDevPnP.Core, Version=3.26.2010.0, Culture=neutral, PublicKeyToken=5e633289e95c321a" />
+  <pnp:Templates ID="CONTAINER-TEMPLATE-0E3229A97247453DA7785E465682D236">
+    <pnp:ProvisioningTemplate ID="TEMPLATE-0E3229A97247453DA7785E465682D236" Version="1" BaseSiteTemplate="GROUP#0" Scope="RootSite">
+      <pnp:Lists>        
+        <pnp:ListInstance Title="Fellowship Members" Description="Information about the members of the Fellowship of the Ring." DocumentTemplate="" OnQuickLaunch="true" TemplateType="100" Url="Lists/Fellowship Members" EnableVersioning="true" MinorVersionLimit="0" MaxVersionLimit="50" DraftVersionVisibility="0" TemplateFeatureID="00bfea71-de22-43b2-a848-c05709900100" EnableFolderCreation="false" DefaultDisplayFormUrl="{site}/Lists/Fellowship Members/DispForm.aspx" DefaultEditFormUrl="{site}/Lists/Fellowship Members/EditForm.aspx" DefaultNewFormUrl="{site}/Lists/Fellowship Members/NewForm.aspx" ImageUrl="/_layouts/15/images/itgen.png?rev=47" IrmExpire="false" IrmReject="false" IsApplicationList="false" ValidationFormula="" ValidationMessage="">
+          <pnp:ContentTypeBindings>
+            <pnp:ContentTypeBinding ContentTypeID="0x01" Default="true" />
+          </pnp:ContentTypeBindings>
+          <pnp:Views>
+            <View Name="{280D415C-54E9-41EC-9D0E-77844C0D745A}" DefaultView="TRUE" MobileView="TRUE" MobileDefaultView="TRUE" Type="HTML" DisplayName="All Items" Url="{site}/Lists/Fellowship Members/AllItems.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/generic.png?rev=47">
+              <Query />
+              <ViewFields>
+                <FieldRef Name="Member" />
+                <FieldRef Name="LinkTitle" />
+                <FieldRef Name="Race" />
+                <FieldRef Name="Age" />
+                <FieldRef Name="From" />
+                <FieldRef Name="Weapons" />
+              </ViewFields>
+              <RowLimit Paged="TRUE">30</RowLimit>
+              <JSLink>clienttemplates.js</JSLink>
+              <CustomFormatter />
+            </View>
+          </pnp:Views>
+          <pnp:Fields>
+            <Field ID="{82642ec8-ef9b-478f-acf9-31f7d45fbc31}" DisplayName="Role" Description="" Name="LinkTitle" SourceID="http://schemas.microsoft.com/sharepoint/v3" StaticName="LinkTitle" Type="Computed" ReadOnly="TRUE" FromBaseType="TRUE" Width="150" DisplayNameSrcField="Title" Sealed="FALSE" Version="6" CustomFormatter="{&#xA;  &quot;$schema&quot;: &quot;https://developer.microsoft.com/json-schemas/sp/v2/column-formatting.schema.json&quot;,&#xA;  &quot;elmType&quot;: &quot;div&quot;,&#xA;  &quot;style&quot;: { &#xA;    &quot;width&quot;: &quot;48px&quot;,&#xA;    &quot;height&quot;: &quot;48px&quot;,&#xA;    &quot;font-size&quot;: &quot;32px&quot;,&#xA;    &quot;background-color&quot;: &quot;green&quot;,&#xA;    &quot;color&quot;: &quot;white&quot;&#xA;  },&#xA;  &quot;children&quot;: [&#xA;    {&#xA;      &quot;elmType&quot;: &quot;div&quot;,&#xA;      &quot;style&quot;: {&#xA;        &quot;margin&quot;: &quot;auto&quot;&#xA;      },&#xA;      &quot;attributes&quot;: {&#xA;        &quot;iconName&quot;: &quot;=if(@currentField == 'Ring-bearer', 'StatusCircleRing', if(@currentField == 'Guardian', 'Shield', if(@currentField == 'Melee', 'DecisionSolid', 'Bullseye')))&quot;&#xA;      }&#xA;    }&#xA;  ]&#xA;}">
+              <FieldRefs>
+                <FieldRef Name="Title" />
+                <FieldRef Name="LinkTitleNoMenu" />
+                <FieldRef Name="_EditMenuTableStart2" />
+                <FieldRef Name="_EditMenuTableEnd" />
+              </FieldRefs>
+              <DisplayPattern>
+                <FieldSwitch>
+                  <Expr>
+                    <GetVar Name="FreeForm" />
+                  </Expr>
+                  <Case Value="TRUE">
+                    <Field Name="LinkTitleNoMenu" />
+                  </Case>
+                  <Default>
+                    <HTML><![CDATA[<div class="ms-vb itx" onmouseover="OnItem(this)" CTXName="ctx]]></HTML>
+                    <Field Name="_EditMenuTableStart2" />
+                    <HTML><![CDATA[">]]></HTML>
+                    <Field Name="LinkTitleNoMenu" />
+                    <HTML><![CDATA[</div>]]></HTML>
+                    <HTML><![CDATA[<div class="s4-ctx" onmouseover="OnChildItem(this.parentNode); return false;">]]></HTML>
+                    <HTML><![CDATA[<span>&nbsp;</span>]]></HTML>
+                    <HTML><![CDATA[<a onfocus="OnChildItem(this.parentNode.parentNode); return false;" onclick="PopMenuFromChevron(event); return false;" href="javascript:;" title="Open Menu"></a>]]></HTML>
+                    <HTML><![CDATA[<span>&nbsp;</span>]]></HTML>
+                    <HTML><![CDATA[</div>]]></HTML>
+                  </Default>
+                </FieldSwitch>
+              </DisplayPattern>
+            </Field>
+            <Field ClientSideComponentId="00000000-0000-0000-0000-000000000000" DisplayName="Member" Format="Dropdown" List="UserInfo" Name="Member" Title="Member" Type="User" UserDisplayOptions="NamePhoto" UserSelectionMode="0" UserSelectionScope="0" ID="{5589e1ea-f296-49eb-b298-d6c35520bc77}" Version="9" StaticName="Member" SourceID="{{listid:Fellowship Members}}" ColName="int1" RowOrdinal="0" CustomFormatter="{&#xA;  &quot;$schema&quot;: &quot;https://developer.microsoft.com/json-schemas/sp/v2/column-formatting.schema.json&quot;,&#xA;  &quot;elmType&quot;: &quot;div&quot;,&#xA;  &quot;style&quot;: {&#xA;    &quot;display&quot;: &quot;flex&quot;,&#xA;    &quot;flex-direction&quot;: &quot;column&quot;&#xA;  },&#xA;  &quot;children&quot;: [&#xA;    {&#xA;      &quot;elmType&quot;: &quot;img&quot;,&#xA;      &quot;attributes&quot;: {&#xA;        &quot;src&quot;: &quot;@currentField.picture&quot;&#xA;      }&#xA;    },&#xA;    {&#xA;      &quot;elmType&quot;: &quot;div&quot;,&#xA;      &quot;txtContent&quot;: &quot;@currentField.title&quot;,&#xA;      &quot;style&quot;: {&#xA;        &quot;margin&quot;: &quot;auto&quot;,&#xA;        &quot;font-family&quot;: &quot;Luminari, Papyrus, Brush Script MT&quot;&#xA;      }&#xA;    }&#xA;  ]&#xA;}" />
+            <Field CustomFormatter="{&#xA;  &quot;$schema&quot;: &quot;https://developer.microsoft.com/json-schemas/sp/v2/column-formatting.schema.json&quot;,&#xA;  &quot;elmType&quot;: &quot;div&quot;,&#xA;  &quot;style&quot;: {&#xA;    &quot;width&quot;: &quot;48px&quot;,&#xA;    &quot;display&quot;: &quot;flex&quot;,&#xA;    &quot;flex-wrap&quot;: &quot;wrap&quot;&#xA;  },&#xA;  &quot;children&quot;: [&#xA;    {&#xA;      &quot;elmType&quot;: &quot;img&quot;,&#xA;      &quot;attributes&quot;: {&#xA;        &quot;src&quot;: &quot;=@currentWeb + '/SiteAssets/RaceIcons/' + @currentField + '.svg'&quot;&#xA;      }&#xA;    },&#xA;    {&#xA;      &quot;elmType&quot;: &quot;div&quot;,&#xA;      &quot;txtContent&quot;: &quot;@currentField&quot;,&#xA;      &quot;style&quot;: {&#xA;        &quot;margin&quot;: &quot;auto&quot;&#xA;      }&#xA;    }&#xA;  ]&#xA;}" DisplayName="Race" FillInChoice="FALSE" Format="Dropdown" IsModern="TRUE" Name="Race" Title="Race" Type="Choice" ID="{b3ed6d68-27d2-4e7d-adf8-6b91de0909b9}" SourceID="{{listid:Fellowship Members}}" StaticName="Race" ColName="nvarchar4" RowOrdinal="0" Version="2">
+              <CHOICES>
+                <CHOICE>Hobbit</CHOICE>
+                <CHOICE>Human</CHOICE>
+                <CHOICE>Dwarf</CHOICE>
+                <CHOICE>Elf</CHOICE>
+                <CHOICE>Ainur</CHOICE>
+              </CHOICES>
+            </Field>
+            <Field CommaSeparator="TRUE" Decimals="0" Description="Age of the member at the time of formation." DisplayName="Age" Format="Dropdown" IsModern="TRUE" Name="Age" Percentage="FALSE" Title="Age" Type="Number" ID="{7f91852c-8f9b-466d-9499-bbf0c2a4ac21}" SourceID="{{listid:Fellowship Members}}" StaticName="Age" ColName="float1" RowOrdinal="0" CustomFormatter="{&#xA;  &quot;$schema&quot;: &quot;https://developer.microsoft.com/json-schemas/sp/v2/column-formatting.schema.json&quot;,&#xA;  &quot;elmType&quot;: &quot;span&quot;,&#xA;  &quot;txtContent&quot;: &quot;@currentField&quot;,&#xA;  &quot;style&quot;: {&#xA;    &quot;font-family&quot;: &quot;Luminari, Papyrus, Brush Script MT&quot;,&#xA;    &quot;font-size&quot;: &quot;28px&quot;,&#xA;    &quot;text-align&quot;: &quot;center&quot;&#xA;  }&#xA;}" Version="2" />
+            <Field Type="Lookup" DisplayName="From" Required="FALSE" EnforceUniqueValues="FALSE" List="{listid:Middle Earth Locales}" ShowField="Title" UnlimitedLengthInDocumentLibrary="FALSE" RelationshipDeleteBehavior="None" ID="{ac2fd05e-92b7-4919-b98b-3482122b7b43}" SourceID="{{listid:Fellowship Members}}" StaticName="From" Name="From" ColName="int2" RowOrdinal="0" CustomFormatter="{&#xA;  &quot;$schema&quot;: &quot;https://developer.microsoft.com/json-schemas/sp/v2/column-formatting.schema.json&quot;,&#xA;  &quot;elmType&quot;: &quot;div&quot;,&#xA;  &quot;style&quot;: {&#xA;    &quot;display&quot;: &quot;flex&quot;,&#xA;    &quot;flex-direction&quot;: &quot;column&quot;,&#xA;    &quot;text-align&quot;: &quot;center&quot;,&#xA;    &quot;font-family&quot;: &quot;Luminari, Papyrus, Brush Script MT&quot;,&#xA;    &quot;font-size&quot;: &quot;18px&quot;&#xA;  },&#xA;  &quot;children&quot;: [&#xA;    {&#xA;      &quot;elmType&quot;: &quot;img&quot;,&#xA;      &quot;attributes&quot;: {&#xA;        &quot;src&quot;: &quot;=@currentWeb + '/SiteAssets/MiddleEarthLocales/' + @currentField.lookupValue + '.jpg'&quot;&#xA;      },&#xA;      &quot;style&quot;: {&#xA;        &quot;height&quot;: &quot;48px&quot;,&#xA;        &quot;width&quot;: &quot;48px&quot;,&#xA;        &quot;border-width&quot;: &quot;3px&quot;,&#xA;        &quot;border-style&quot;: &quot;solid&quot;,&#xA;        &quot;border-color&quot;: &quot;=if(@currentField.lookupValue == 'The Shire', 'brown', if(@currentField.lookupValue == 'Rivendell', 'purple', if(@currentField.lookupValue == 'Osgiliath', 'grey', if(@currentField.lookupValue == 'Mirkwood Forest', 'green', if(@currentField.lookupValue == 'Blue Mountains', 'blue', 'gold')))))&quot;,&#xA;        &quot;border-radius&quot;: &quot;100px&quot;&#xA;      }&#xA;    },&#xA;    {&#xA;      &quot;elmType&quot;: &quot;div&quot;,&#xA;      &quot;txtContent&quot;: &quot;@currentField.lookupValue&quot;&#xA;    }&#xA;  ]&#xA;}" Version="6" />
+            <Field Type="Lookup" DisplayName="Homeland" List="{listid:Middle Earth Locales}" WebId="{siteid}" ShowField="ImageFileName" FieldRef="ac2fd05e-92b7-4919-b98b-3482122b7b43" ReadOnly="TRUE" UnlimitedLengthInDocumentLibrary="FALSE" ID="{24207fc7-b6c4-4808-b924-cf7df9004d03}" SourceID="{{listid:Fellowship Members}}" StaticName="From_x003a_ImageFileName" Name="From_x003a_ImageFileName" Version="5" CustomFormatter="{&#xA;  &quot;$schema&quot;: &quot;https://developer.microsoft.com/json-schemas/sp/v2/column-formatting.schema.json&quot;,&#xA;  &quot;elmType&quot;: &quot;div&quot;,&#xA;  &quot;children&quot;: [&#xA;    {&#xA;      &quot;elmType&quot;: &quot;img&quot;,&#xA;      &quot;attributes&quot;: {&#xA;        &quot;src&quot;: &quot;=@currentWeb + '/SiteAssets/MiddleEarthLocales/' + @currentField&quot;&#xA;      },&#xA;      &quot;style&quot;:{&#xA;        &quot;height&quot;: &quot;48px&quot;,&#xA;        &quot;width&quot;: &quot;48px&quot;,&#xA;        &quot;border-radius&quot;: &quot;100px&quot;&#xA;      }&#xA;    },&#xA;    {&#xA;      &quot;elmType&quot;: &quot;div&quot;,&#xA;      &quot;txtContent&quot;: &quot;[$Homeland]&quot;&#xA;    }&#xA;  ]&#xA;}" />
+            <Field ClientSideComponentId="00000000-0000-0000-0000-000000000000" DisplayName="Weapons" FillInChoice="FALSE" Format="Dropdown" Name="Weapons" Title="Weapons" Type="MultiChoice" ID="{359dbe51-aa39-4f9d-ae9d-848e72d4fa37}" Version="13" StaticName="Weapons" SourceID="{{listid:Fellowship Members}}" ColName="ntext2" RowOrdinal="0" CustomFormatter="{&#xA;  &quot;$schema&quot;: &quot;https://developer.microsoft.com/json-schemas/sp/v2/column-formatting.schema.json&quot;,&#xA;  &quot;elmType&quot;: &quot;div&quot;,&#xA;  &quot;children&quot;: [&#xA;    {&#xA;      &quot;forEach&quot;: &quot;weapon in @currentField&quot;,&#xA;      &quot;elmType&quot;: &quot;img&quot;,&#xA;      &quot;attributes&quot;: {&#xA;        &quot;src&quot;: &quot;=@currentWeb + '/SiteAssets/WeaponIcons/' + [$weapon] + '.svg'&quot;,&#xA;        &quot;alt&quot;: &quot;[$weapon]&quot;&#xA;      },&#xA;      &quot;style&quot;: {&#xA;        &quot;display&quot;: &quot;flex&quot;,&#xA;        &quot;height&quot;: &quot;32px&quot;,&#xA;        &quot;margin&quot;: &quot;auto&quot;&#xA;      }&#xA;    }&#xA;  ]&#xA;}">
+              <CHOICES>
+                <CHOICE>Dagger</CHOICE>
+                <CHOICE>Sword</CHOICE>
+                <CHOICE>Shield</CHOICE>
+                <CHOICE>Bow</CHOICE>
+                <CHOICE>Axe</CHOICE>
+                <CHOICE>Frying Pan</CHOICE>
+                <CHOICE>Staff</CHOICE>
+              </CHOICES>
+            </Field>
+          </pnp:Fields>
+          <pnp:Webhooks>
+            <pnp:Webhook ServerNotificationUrl="https://southcentralus1.pushnp.svc.ms/notifications?token=9d3f7672-528c-4af3-87f0-976684a9ad7b" ExpiresInDays="1" />
+          </pnp:Webhooks>
+        </pnp:ListInstance>
+        <pnp:ListInstance Title="Middle Earth Locales" Description="List of various locations in Middle Earth" DocumentTemplate="" OnQuickLaunch="true" TemplateType="100" Url="Lists/Middle Earth Locales" EnableVersioning="true" MinorVersionLimit="0" MaxVersionLimit="50" DraftVersionVisibility="0" TemplateFeatureID="00bfea71-de22-43b2-a848-c05709900100" EnableFolderCreation="false" DefaultDisplayFormUrl="{site}/Lists/Middle Earth Locales/DispForm.aspx" DefaultEditFormUrl="{site}/Lists/Middle Earth Locales/EditForm.aspx" DefaultNewFormUrl="{site}/Lists/Middle Earth Locales/NewForm.aspx" ImageUrl="/_layouts/15/images/itgen.png?rev=47" IrmExpire="false" IrmReject="false" IsApplicationList="false" ValidationFormula="" ValidationMessage="">
+          <pnp:ContentTypeBindings>
+            <pnp:ContentTypeBinding ContentTypeID="0x01" Default="true" />
+          </pnp:ContentTypeBindings>
+          <pnp:Views>
+            <View Name="{88145D19-F3EC-4B6B-95C1-4E7C0B6C417D}" DefaultView="TRUE" MobileView="TRUE" MobileDefaultView="TRUE" Type="HTML" DisplayName="All Items" Url="{site}/Lists/Middle Earth Locales/AllItems.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/generic.png?rev=47">
+              <Query />
+              <ViewFields>
+                <FieldRef Name="LinkTitle" />
+                <FieldRef Name="ImageFileName" />
+              </ViewFields>
+              <RowLimit Paged="TRUE">30</RowLimit>
+              <JSLink>clienttemplates.js</JSLink>
+              <CustomFormatter />
+            </View>
+          </pnp:Views>
+          <pnp:Fields>
+            <Field DisplayName="Image" Format="Thumbnail" IsModern="TRUE" Name="Image" Title="Image" Type="Thumbnail" ID="{13ba151b-b8b2-4194-acee-60e603dc725c}" SourceID="{{listid:Middle Earth Locales}}" StaticName="Image" ColName="ntext2" RowOrdinal="0" />
+            <Field DisplayName="ImageFileName" Format="Dropdown" IsModern="TRUE" MaxLength="255" Name="ImageFileName" Title="ImageFileName" Type="Text" ID="{b170d419-77f8-4c39-9374-ee04e4dfa18f}" SourceID="{{listid:Middle Earth Locales}}" StaticName="ImageFileName" ColName="nvarchar4" RowOrdinal="0" />
+          </pnp:Fields>
+        </pnp:ListInstance>
+        <pnp:ListInstance Title="Site Assets" Description="Use this library to store files which are included on pages within this site, such as images on Wiki pages." DocumentTemplate="{site}/SiteAssets/Forms/template.doc" TemplateType="101" Url="SiteAssets" EnableVersioning="true" MinorVersionLimit="0" MaxVersionLimit="500" DraftVersionVisibility="0" TemplateFeatureID="00bfea71-e717-4e80-aa17-d0c71b360101" EnableAttachments="false" DefaultDisplayFormUrl="{site}/SiteAssets/Forms/DispForm.aspx" DefaultEditFormUrl="{site}/SiteAssets/Forms/EditForm.aspx" DefaultNewFormUrl="{site}/SiteAssets/Forms/Upload.aspx" ImageUrl="/_layouts/15/images/itdl.png?rev=47" IrmExpire="false" IrmReject="false" IsApplicationList="true" ValidationFormula="" ValidationMessage="">
+          <pnp:PropertyBagEntries>
+            <pnp:PropertyBagEntry Key="IsAttachmentLibrary" Value="1" Overwrite="false" />
+          </pnp:PropertyBagEntries>
+          <pnp:ContentTypeBindings>
+            <pnp:ContentTypeBinding ContentTypeID="0x0101" Default="true" />
+            <pnp:ContentTypeBinding ContentTypeID="0x0120" />
+          </pnp:ContentTypeBindings>
+          <pnp:Views>
+            <View Name="{B4988111-8C59-4EAE-97B6-7817BC41F346}" DefaultView="TRUE" MobileView="TRUE" MobileDefaultView="TRUE" Type="HTML" DisplayName="All Documents" Url="{site}/SiteAssets/Forms/AllItems.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/dlicon.png?rev=47">
+              <Query>
+                <OrderBy>
+                  <FieldRef Name="FileLeafRef" />
+                </OrderBy>
+              </Query>
+              <ViewFields>
+                <FieldRef Name="DocIcon" />
+                <FieldRef Name="LinkFilename" />
+                <FieldRef Name="Modified" />
+                <FieldRef Name="Editor" />
+              </ViewFields>
+              <RowLimit Paged="TRUE">30</RowLimit>
+              <JSLink>clienttemplates.js</JSLink>
+            </View>
+          </pnp:Views>
+          <pnp:Fields>
+            <Field ID="{d1cff744-ba61-4189-94d6-97d0a9eb4f6a}" Type="Text" DisplayName="Tags" Name="MediaServiceAutoTags" Group="_Hidden" Hidden="FALSE" Sealed="TRUE" ReadOnly="TRUE" ShowInNewForm="FALSE" ShowInDisplayForm="FALSE" ShowInEditForm="FALSE" ShowInListSettings="FALSE" Viewable="FALSE" Json="FALSE" SourceID="{{listid:Site Assets}}" StaticName="MediaServiceAutoTags" ColName="nvarchar13" RowOrdinal="0" />
+          </pnp:Fields>
+          <pnp:FieldRefs>
+            <pnp:FieldRef ID="d307dff3-340f-44a2-9f4b-fbfe1ba07459" Name="_CommentCount" DisplayName="Comment count" />
+            <pnp:FieldRef ID="db8d9d6d-dc9a-4fbd-85f3-4a753bfdc58c" Name="_LikeCount" DisplayName="Like count" />
+          </pnp:FieldRefs>
+          <pnp:Webhooks>
+            <pnp:Webhook ServerNotificationUrl="https://southcentralus1.pushnp.svc.ms/notifications?token=03fcc1a7-7ac5-4299-b7eb-3e6a1239b2f3" ExpiresInDays="1" />
+          </pnp:Webhooks>
+        </pnp:ListInstance>        
+      </pnp:Lists>
+    </pnp:ProvisioningTemplate>
+  </pnp:Templates>
+</pnp:Provisioning>

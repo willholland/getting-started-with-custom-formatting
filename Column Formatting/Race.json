@@ -1,0 +1,23 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/sp/v2/column-formatting.schema.json",
+    "elmType": "div",
+    "style": {
+        "width": "48px",
+        "display": "flex",
+        "flex-wrap": "wrap"
+    },
+    "children": [{
+            "elmType": "img",
+            "attributes": {
+                "src": "=@currentWeb + '/SiteAssets/RaceIcons/' + @currentField + '.svg'"
+            }
+        },
+        {
+            "elmType": "div",
+            "txtContent": "@currentField",
+            "style": {
+                "margin": "auto"
+            }
+        }
+    ]
+}

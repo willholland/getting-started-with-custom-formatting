@@ -1,0 +1,20 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/sp/v2/column-formatting.schema.json",
+    "elmType": "div",
+    "style": {
+        "width": "48px",
+        "height": "48px",
+        "font-size": "32px",
+        "background-color": "green",
+        "color": "white"
+    },
+    "children": [{
+        "elmType": "div",
+        "style": {
+            "margin": "auto"
+        },
+        "attributes": {
+            "iconName": "=if(@currentField == 'Ring-bearer', 'StatusCircleRing', if(@currentField == 'Guardian', 'Shield', if(@currentField == 'Melee', 'DecisionSolid', 'Bullseye')))"
+        }
+    }]
+}
