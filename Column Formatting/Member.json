@@ -1,23 +1,31 @@
 {
-    "$schema": "https://developer.microsoft.com/json-schemas/sp/v2/column-formatting.schema.json",
-    "elmType": "div",
-    "style": {
-        "display": "flex",
-        "flex-direction": "column"
+  "$schema": "https://developer.microsoft.com/json-schemas/sp/v2/column-formatting.schema.json",
+  "elmType": "div",
+  "style": {
+    "display": "flex",
+    "flex-direction": "column"
+  },
+  "children": [
+    {
+      "elmType": "img",
+      "attributes": {
+        "src": "@currentField.picture",
+        "class": "ms-borderColor-themePrimary"
+      },
+      "style": {
+        "border-width": "5px",
+        "border-style": "solid",
+        "border-radius": "15px"
+      }
     },
-    "children": [{
-            "elmType": "img",
-            "attributes": {
-                "src": "@currentField.picture"
-            }
-        },
-        {
-            "elmType": "div",
-            "txtContent": "@currentField.title",
-            "style": {
-                "margin": "auto",
-                "font-family": "Luminari, Papyrus, Brush Script MT"
-            }
-        }
-    ]
+    {
+      "elmType": "div",
+      "txtContent": "@currentField.title",
+      "style": {
+        "margin": "auto",
+        "font-family": "Luminari, Papyrus, Brush Script MT",
+        "font-size": "1.25em"
+      }
+    }
+  ]
 }
