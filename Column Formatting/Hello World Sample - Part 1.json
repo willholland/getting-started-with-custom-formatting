@@ -1,0 +1,11 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/sp/v2/column-formatting.schema.json",
+    "elmType": "div",
+    "attributes": {
+        "iconName": "Game"
+    },
+    "style": {
+        "font-size": "48px",
+        "color": "red"
+    }
+}
