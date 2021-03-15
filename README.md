@@ -2,11 +2,11 @@
 ## Summary
 Contains several examples of using SharePoint's custom column formatting feature to convert this...
 
-![Before Picture](screenshots\colum-formatting-before.png)
+![Before Picture](screenshots/column-formatting-before.png)
 
 into this...
 
-![After Picture](screenshots\colum-formatting-after.png)
+![After Picture](screenshots/column-formatting-after.png)
 
 ## List requirements
 You will need two lists.
