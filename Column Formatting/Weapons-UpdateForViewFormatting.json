@@ -1,0 +1,22 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/sp/v2/column-formatting.schema.json",
+    "elmType": "div",
+    "style": {
+        "display": "flex",
+        "flex-direction": "column",
+        "width": "100%",
+        "height": "100%"
+    },
+    "children": [{
+        "forEach": "weapon in @currentField",
+        "elmType": "img",
+        "attributes": {
+            "src": "=@currentWeb + '/SiteAssets/WeaponIcons/' + [$weapon] + '.svg'",
+            "alt": "[$weapon]"
+        },
+        "style": {
+            "height": "32px",
+            "margin": "auto"
+        }
+    }]
+}
