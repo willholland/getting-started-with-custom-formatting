@@ -20,7 +20,7 @@ You can also refer to the [official documentation](https://docs.microsoft.com/en
 
 I should also warn you that your HTML and CSS skills are going to come into play a lot more here, as you'll be trying to work with multiple elements to position them correctly. 
 
-If you're not en expert, that's perfectly okay - I'm not one either - you'll just need an extra dose of patience. Trial and error will get you there, eventually. I'm not going to dwell on the particular CSS used in these examples except in cases where it's a pattern that could be applied to other use cases.
+If you're not an expert, that's perfectly okay - I'm not one either - you'll just need an extra dose of patience. Trial and error will get you there, eventually. I'm not going to dwell on the particular CSS used in these examples except in cases where it's a pattern that could be applied to other use cases.
 
 And that's pretty much it. There's some new stuff we'll learn about that only applies to View formatting, but everything we learned from the previous blog post will apply here as well.
 
@@ -68,8 +68,7 @@ List views aren't that much different.
     "$schema": "https://developer.microsoft.com/json-schemas/sp/v2/row-formatting.schema.json",    
     "hideSelection": true,
     "hideColumnHeader": true,
-    "rowFormatter": {        
-    }
+    "rowFormatter": {}
 }
 ```
 
@@ -198,7 +197,7 @@ That's the basic layout of our custom view, simply a series of parent and child 
 First, there are several examples of this `"attributes": { "title": "<TEXT>" }` pattern. We can use this as a means of commenting about the purpose of the element, since comments aren't allowed in valid JSON and would break our view. Again, this isn't required and adds absolutely no value to the view itself. It does, however, help keep us (and any future adventurer) oriented as to where we are in our JSON. 
 > **NOTE**: Using the title attribute will cause whatever you specify to be displayed as a tooltip when a user hovers over the element. You can remove your titles after you done, if that bothers you. Otherwise, just be aware that users may see your witty comments.
 
-Also, in the "Member/Role DIV" childdren, the second child looks a little peculiar. 
+Also, in the "Member/Role DIV" children, the second child looks a little peculiar. 
 
 ```
 {
@@ -595,6 +594,7 @@ After that, we can paste it in, but we'll need to modify things every so slightl
     "fillHorizontally": true,
     "hideSelection": true,
     "formatter": { }
+}
 ```
 
 Unlike columns and list view formats, the tile schema wants us to specify an exact `width` and `height` (in pixels) for each tile. It's not strictly required, but we'll want to supply our own values here to ensure that each card has the right dimensions.
